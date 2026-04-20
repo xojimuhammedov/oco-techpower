@@ -1,104 +1,148 @@
 import { useParams, Link } from "react-router";
 import { ArrowLeft, CheckCircle, Truck, Wrench, Phone, ArrowRight, Send, Shield } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-
+import pump1100 from "../../assets/products/pump-1100w.jpg";
+import pump750 from "../../assets/products/pump-750w.jpg";
+import pump550 from "../../assets/products/pump-550w.jpg";
+import pump370 from "../../assets/products/pump-370w.jpg";
+import regulator1000 from "../../assets/products/regulator-1000va.jpg";
+import heaterUltra from "../../assets/products/heater-ultra-50l.jpg";
+import heaterDay from "../../assets/products/heater-day-50l.jpg";
 export function ProductDetailPage() {
   const { id } = useParams();
 
   const productsData: Record<string, any> = {
-    "centrifugal-cp-150": {
-      name: "Centrifugal Pump CP-150",
-      category: "Industrial",
-      image: "https://images.unsplash.com/photo-1670843837803-8122fdb3d4c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200",
-      description: "High-performance centrifugal pump designed for industrial applications. Features robust construction and reliable operation for continuous duty cycles.",
-      specs: {
-        power: "1.5 kW",
-        voltage: "220V / 380V",
-        flow: "150 L/min",
-        head: "30 meters",
-        inlet: "2 inches",
-        outlet: "1.5 inches",
-        material: "Cast Iron",
-        impeller: "Brass",
-      },
-      useCases: [
-        "Industrial water circulation",
-        "Cooling systems",
-        "Process water supply",
-        "General industrial pumping",
-      ],
-      features: [
-        "Energy-efficient motor",
-        "Low noise operation",
-        "Corrosion-resistant materials",
-        "Easy maintenance design",
-        "Thermal overload protection",
-        "Sealed bearings for long life",
-      ],
-    },
-    "submersible-sp-200": {
-      name: "Submersible Pump SP-200",
-      category: "Irrigation",
-      image: "https://images.unsplash.com/photo-1693463735697-73df1f35930d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200",
-      description: "Reliable submersible pump perfect for deep well applications and agricultural irrigation. Built to withstand harsh underground conditions.",
-      specs: {
-        power: "2.2 kW",
-        voltage: "380V",
-        flow: "200 L/min",
-        head: "50 meters",
-        diameter: "4 inches",
-        cable: "20 meters",
-        material: "Stainless Steel",
-        stages: "Multi-stage",
-      },
-      useCases: [
-        "Deep well water extraction",
-        "Agricultural irrigation",
-        "Water transfer",
-        "Livestock water supply",
-      ],
-      features: [
-        "Submersible design for quiet operation",
-        "Stainless steel construction",
-        "Sand-resistant impeller",
-        "Built-in check valve",
-        "Thermal protection",
-        "Float switch compatible",
-      ],
-    },
-    "domestic-dp-100": {
-      name: "Domestic Pump DP-100",
+    "avtomatik-suv-nasosi-1100": {
+      name: "Avtomatik Suv Nasos 1100W",
       category: "Domestic",
-      image: "https://images.unsplash.com/photo-1698031610511-c7a35d121b17?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200",
-      description: "Compact and efficient pump ideal for residential water supply. Perfect for homes, apartments, and small-scale applications.",
+      image: pump1100,
+      description: "High-performance automatic water pump with 100% copper winding. Ideal for continuous domestic water supply with high head and excellent flow capacity.",
       specs: {
-        power: "0.75 kW",
+        power: "1100 W",
         voltage: "220V",
-        flow: "100 L/min",
-        head: "20 meters",
-        inlet: "1 inch",
-        outlet: "1 inch",
-        material: "Cast Iron / Plastic",
-        weight: "12 kg",
+        frequency: "50 Hz",
+        max_head: "55 meters",
+        flow_capacity: "4.8 m³/h",
+        suction_height: "8 meters",
+        hole_diameter: "25 mm",
+        speed: "3000 RPM",
+        material: "100% Copper Winding",
       },
-      useCases: [
-        "Home water supply",
-        "Garden irrigation",
-        "Well pumping",
-        "Water tank filling",
-      ],
-      features: [
-        "Compact design",
-        "Easy installation",
-        "Low power consumption",
-        "Quiet operation",
-        "Automatic pressure control",
-        "Long service life",
-      ],
+      useCases: ["Home water supply", "Garden irrigation", "Well pumping", "Pressure boosting"],
+      features: ["Automatic operation", "100% Copper winding", "Durable construction", "Energy efficient"]
+    },
+    "avtomatik-suv-nasosi-750": {
+      name: "Avtomatik Suv Nasos 750W",
+      category: "Domestic",
+      image: pump750,
+      description: "Efficient automatic water pump perfect for standard residential use. Features an all-copper motor for maximum lifespan.",
+      specs: {
+        power: "750 W",
+        voltage: "220V",
+        frequency: "50 Hz",
+        max_head: "50 meters",
+        flow_capacity: "3.4 m³/h",
+        suction_height: "8 meters",
+        hole_diameter: "25 mm",
+        speed: "3000 RPM",
+        material: "100% Copper Winding",
+      },
+      useCases: ["Residential water supply", "Lawn irrigation", "Shallow well extraction", "Tank filling"],
+      features: ["Energy saving 750W motor", "100% Copper winding", "Overheat protection", "Quiet operation"]
+    },
+    "avtomatik-suv-nasosi-550": {
+      name: "Avtomatik Suv Nasos 550W",
+      category: "Domestic",
+      image: pump550,
+      description: "Compact and reliable automatic pump for daily domestic tasks. Built with premium copper winding for safe and continuous running.",
+      specs: {
+        power: "550 W",
+        voltage: "220V",
+        frequency: "50 Hz",
+        max_head: "42 meters",
+        flow_capacity: "2.2 m³/h",
+        suction_height: "8 meters",
+        hole_diameter: "25 mm",
+        speed: "3000 RPM",
+        material: "100% Copper Winding",
+      },
+      useCases: ["Apartment water supply", "Small garden watering", "Secondary pressure boosting"],
+      features: ["Stable water pressure", "Compact size", "100% Copper winding", "Easy installation"]
+    },
+    "avtomatik-suv-nasosi-370": {
+      name: "Avtomatik Suv Nasos 370W",
+      category: "Domestic",
+      image: pump370,
+      description: "Economical and compact automatic water pump. Delivers steady flow with minimal power consumption, ideal for light domestic applications.",
+      specs: {
+        power: "370 W",
+        voltage: "220V",
+        frequency: "50 Hz",
+        max_head: "30 meters",
+        flow_capacity: "2.2 m³/h",
+        suction_height: "8 meters",
+        hole_diameter: "25 mm",
+        speed: "3000 RPM",
+        material: "100% Copper Winding",
+      },
+      useCases: ["Light domestic use", "Small scale irrigation", "Secondary circulation"],
+      features: ["Highly economical", "100% Copper winding", "Quiet performance", "Long lifespan"]
+    },
+    "stabilizator-dnb-1000va": {
+      name: "Stabilizator OCO DNB-1000VA",
+      category: "Accessories",
+      image: regulator1000,
+      description: "Automated relay-type voltage regulator to protect all your sensitive appliances from voltage fluctuations and electrical surges.",
+      specs: {
+        capacity: "1000 VA",
+        amperage: "3.6 A",
+        type: "Relay (Релейный)",
+        input_voltage: "100 - 260 V",
+        output_voltage: "220 V",
+        precision_error: "± 10 %",
+        net_weight: "2.35 kg",
+        gross_weight: "2.5 kg",
+      },
+      useCases: ["Protecting water pumps", "Home electronics safety", "Unstable grid areas", "Voltage stabilization"],
+      features: ["Wide input range (100-260V)", "Fast relay response", "Safety cut-off", "Digital parameter display"]
+    },
+    "heater-ultra-50l": {
+      name: "Delfin Ultra EJT50L",
+      category: "Water Heaters",
+      image: heaterUltra,
+      description: "Premium electric water heater featuring precise temperature control and high-efficiency insulation to guarantee hot water availability at all times.",
+      specs: {
+        model: "EJT50L",
+        capacity: "50 Liters",
+        power: "2 kW",
+        voltage: "220 V",
+        net_weight: "15 kg",
+        gross_weight: "17 kg",
+        thermostat: "Temperature Control dial included",
+      },
+      useCases: ["Residential bathrooms", "Kitchen hot water", "Shower supply", "Consistent heating"],
+      features: ["Precision temp control", "50L ample capacity", "Energy-efficient element", "Enhanced insulation"]
+    },
+    "heater-day-50l": {
+      name: "Delfin Day AJ50L",
+      category: "Water Heaters",
+      image: heaterDay,
+      description: "Dependable electric water heater designed for daily use. Ensures rapid heating with a reliable 2kW heating element and compact design.",
+      specs: {
+        model: "AJ50L",
+        capacity: "50 Liters",
+        power: "2 kW",
+        voltage: "220 V",
+        net_weight: "15 kg",
+        gross_weight: "17 kg",
+        thermostat: "Standard",
+      },
+      useCases: ["Bathroom hot water", "Kitchen supply", "Daily regular use"],
+      features: ["Fast 2kW heating", "Durable inner tank", "50L capacity", "Modern design"]
     },
   };
 
-  const product = id && productsData[id] ? productsData[id] : productsData["centrifugal-cp-150"];
+  const product = id && productsData[id] ? productsData[id] : productsData["avtomatik-suv-nasosi-1100"];
 
   return (
     <div className="w-full">
