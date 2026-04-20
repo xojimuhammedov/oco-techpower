@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router";
 import { Filter, ArrowRight, Phone, CheckCircle } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import pump1100 from "../../assets/products/pump-1100w.jpg";
+import pump750 from "../../assets/products/pump-750w.jpg";
+import pump550 from "../../assets/products/pump-550w.jpg";
+import pump370 from "../../assets/products/pump-370w.jpg";
+import regulator1000 from "../../assets/products/regulator-1000va.jpg";
+import heaterUltra from "../../assets/products/heater-ultra-50l.jpg";
+import heaterDay from "../../assets/products/heater-day-50l.jpg";
 
 export function ProductsPage() {
   const [searchParams] = useSearchParams();
@@ -16,96 +23,83 @@ export function ProductsPage() {
     }
   }, [categoryFromUrl]);
 
-  const products = [
+  const products: any[] = [
     {
-      id: "centrifugal-cp-150",
-      name: "Centrifugal Pump CP-150",
-      category: "industrial",
-      power: "1.5kw",
-      flow: "150 L/min",
-      head: "30m",
-      usage: "Industrial applications",
-      image: "https://images.unsplash.com/photo-1670843837803-8122fdb3d4c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-    },
-    {
-      id: "submersible-sp-200",
-      name: "Submersible Pump SP-200",
-      category: "irrigation",
-      power: "2.2kw",
-      flow: "200 L/min",
-      head: "50m",
-      usage: "Deep well & irrigation",
-      image: "https://images.unsplash.com/photo-1693463735697-73df1f35930d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-    },
-    {
-      id: "domestic-dp-100",
-      name: "Domestic Pump DP-100",
-      category: "domestic",
-      power: "0.75kw",
-      flow: "100 L/min",
-      head: "20m",
-      usage: "Home water supply",
-      image: "https://images.unsplash.com/photo-1698031610511-c7a35d121b17?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-    },
-    {
-      id: "booster-bp-180",
-      name: "Booster Pump BP-180",
+      id: "avtomatik-suv-nasosi-1100",
+      name: "Avtomatik Suv Nasos 1100W",
       category: "domestic",
       power: "1.1kw",
-      flow: "180 L/min",
-      head: "35m",
-      usage: "Pressure boosting",
-      image: "https://images.unsplash.com/photo-1774019883037-91f5d43e2890?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+      flow: "4.8 m³/h",
+      head: "55m",
+      usage: "100% Copper Winding, 8m Suction",
+      image: pump1100,
     },
     {
-      id: "irrigation-ip-250",
-      name: "Irrigation Pump IP-250",
-      category: "irrigation",
-      power: "3.0kw",
-      flow: "250 L/min",
-      head: "40m",
-      usage: "Agricultural irrigation",
-      image: "https://images.unsplash.com/photo-1774019883068-128d688b3b0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+      id: "avtomatik-suv-nasosi-750",
+      name: "Avtomatik Suv Nasos 750W",
+      category: "domestic",
+      power: "0.75kw",
+      flow: "3.4 m³/h",
+      head: "50m",
+      usage: "100% Copper Winding, 8m Suction",
+      image: pump750,
     },
     {
-      id: "industrial-ip-300",
-      name: "Industrial Pump IP-300",
-      category: "industrial",
-      power: "5.5kw",
-      flow: "300 L/min",
-      head: "60m",
-      usage: "Heavy-duty industrial",
-      image: "https://images.unsplash.com/photo-1772588047051-c35d272b5d9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-    },
-    {
-      id: "solar-sp-120",
-      name: "Solar Pump SP-120",
-      category: "irrigation",
-      power: "1.5kw",
-      flow: "120 L/min",
-      head: "25m",
-      usage: "Solar-powered irrigation",
-      image: "https://images.unsplash.com/photo-1774019883172-a89730a86500?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-    },
-    {
-      id: "high-pressure-hp-200",
-      name: "High Pressure HP-200",
-      category: "industrial",
-      power: "4.0kw",
-      flow: "200 L/min",
-      head: "80m",
-      usage: "High-rise buildings",
-      image: "https://images.unsplash.com/photo-1613244528156-416a926130e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-    },
-    {
-      id: "jet-pump-jp-90",
-      name: "Jet Pump JP-90",
+      id: "avtomatik-suv-nasosi-550",
+      name: "Avtomatik Suv Nasos 550W",
       category: "domestic",
       power: "0.55kw",
-      flow: "90 L/min",
-      head: "15m",
-      usage: "Shallow well pumping",
-      image: "https://images.unsplash.com/photo-1759692072150-166d6387c616?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+      flow: "2.2 m³/h",
+      head: "42m",
+      usage: "100% Copper Winding, 8m Suction",
+      image: pump550,
+    },
+    {
+      id: "avtomatik-suv-nasosi-370",
+      name: "Avtomatik Suv Nasos 370W",
+      category: "domestic",
+      power: "0.37kw",
+      flow: "2.2 m³/h",
+      head: "30m",
+      usage: "100% Copper Winding, 8m Suction",
+      image: pump370,
+    },
+    {
+      id: "stabilizator-dnb-1000va",
+      name: "Stabilizator OCO DNB-1000VA",
+      category: "accessories",
+      power: "1000VA",
+      powerLabel: "Capacity",
+      flow: "3.6A",
+      flowLabel: "Amperage",
+      head: "100-260V",
+      headLabel: "Input",
+      usage: "Relay Voltage Regulator, ±10% precision",
+      image: regulator1000,
+    },
+    {
+      id: "heater-ultra-50l",
+      name: "Delfin Ultra EJT50L",
+      category: "heaters",
+      power: "2kw",
+      flow: "50 L",
+      flowLabel: "Capacity",
+      head: "220V",
+      headLabel: "Voltage",
+      usage: "Electric Water Heater with Temp Control",
+      image: heaterUltra,
+    },
+    {
+      id: "heater-day-50l",
+      name: "Delfin Day AJ50L",
+      category: "heaters",
+      power: "2kw",
+      flow: "50 L",
+      flowLabel: "Capacity",
+      head: "220V",
+      headLabel: "Voltage",
+      usage: "Electric Water Heater",
+      image: heaterDay,
     },
   ];
 
@@ -113,7 +107,9 @@ export function ProductsPage() {
     { value: "all", label: "All Categories" },
     { value: "domestic", label: "Domestic" },
     { value: "industrial", label: "Industrial" },
-    { value: "irrigation", label: "Irrigation" },
+    { value: "irrigation", label: "Agriculture" },
+    { value: "heaters", label: "Water Heaters" },
+    { value: "accessories", label: "Accessories" },
   ];
 
   const powerRanges = [
@@ -234,15 +230,15 @@ export function ProductsPage() {
                   <p className="text-sm text-muted-foreground mb-4">{product.usage}</p>
                   <div className="grid grid-cols-3 gap-2 mb-4 text-xs">
                     <div className="bg-secondary px-2 py-2 rounded-lg text-center">
-                      <div className="text-muted-foreground mb-0.5">Power</div>
+                      <div className="text-muted-foreground mb-0.5">{product.powerLabel || "Power"}</div>
                       <div className="text-foreground">{product.power}</div>
                     </div>
                     <div className="bg-secondary px-2 py-2 rounded-lg text-center">
-                      <div className="text-muted-foreground mb-0.5">Flow</div>
+                      <div className="text-muted-foreground mb-0.5">{product.flowLabel || "Flow"}</div>
                       <div className="text-foreground">{product.flow}</div>
                     </div>
                     <div className="bg-secondary px-2 py-2 rounded-lg text-center">
-                      <div className="text-muted-foreground mb-0.5">Head</div>
+                      <div className="text-muted-foreground mb-0.5">{product.headLabel || "Head"}</div>
                       <div className="text-foreground">{product.head}</div>
                     </div>
                   </div>
